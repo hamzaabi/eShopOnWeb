@@ -33,6 +33,7 @@ pipeline {
     stage('Deployment') {
       steps {
         sh 'dotnet Publish eShopOnWeb.sln -o /var/aspnet'
+        catchError(message: 'Functioan problem')
       }
     }
 
